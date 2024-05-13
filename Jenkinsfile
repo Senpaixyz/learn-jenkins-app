@@ -69,6 +69,16 @@ pipeline {
     post {
         always {
             junit 'jest-results/junit.xml'
+            // publish report (Make sure that under pipeline syntax )
+            /*
+                - selected the steps publisHTMLM- Publish HTML Reports
+                - HTML directory to archive = playwright-report
+                - IndexPage(s) = index.html
+                - Report Title = Playwright HTML Report
+                - Hit Generate Pipeline Script then copy the text
+                - Paste here
+            */
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Playwright HTML Report', reportTitles: '', useWrapperFileDirectly: true])
         }
     }
 }
