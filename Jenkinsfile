@@ -53,10 +53,12 @@ pipeline {
 
                 // DO
                 // npm minstall server <- installed locally 
-                // node_modules/.bin/serve -s build
+                // node_modules/.bin/serve -s build &
+                // wait for sleep 10ms before we exec. playwright test
                 sh '''
                     npm install serve
-                    node_modules/.bin/serve -s build
+                    node_modules/.bin/serve -s build &
+                    sleep 10
                     npx playwright test
                 '''
             }
