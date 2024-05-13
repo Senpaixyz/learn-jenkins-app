@@ -47,9 +47,16 @@ pipeline {
                 }
             }
             steps {
+                // DONT
+                // npm install -g serve <- will result to permission issues 'permission denied, mkdir '/usr/lib/node_modules/serve''
+                // serve -s build
+
+                // DO
+                // npm minstall server <- installed locally 
+                // node_modules/.bin/serve -s build
                 sh '''
-                    npm install -g serve
-                    serve -s build
+                    npm install serve
+                    node_modules/.bin/serve -s build
                     npx playwright test
                 '''
             }
