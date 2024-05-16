@@ -89,6 +89,13 @@ pipeline {
 
     environment {
         NETLIFY_SITE_ID = '3ce88dac-de2a-426b-b6a4-e6fc4764a258'
+        // Jenkins -> Dashboard -> Manage Jenkins -> Credentials -> System -> Global Cred ->> Add Cred.
+        // Kind: Secret Text
+        // Scope: Global 
+        // Secret: <secret>
+        // ID: netlify-token # use to ref to pipeline
+        // Then Create
+        NETLIFY_AUTH_TOKEN = credentials['netlify-token']
     }
 
     stages {
@@ -173,6 +180,7 @@ pipeline {
                     npm install netlify-cli
                     node_modules/.bin/netlify --version
                     echo "Deploying to production. Site ID: $NETLIFY_SITE_ID"
+                    node_modules/.bin/netlify status
                 '''
             }
         }
