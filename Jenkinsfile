@@ -95,7 +95,7 @@ pipeline {
         // Secret: <secret>
         // ID: netlify-token # use to ref to pipeline
         // Then Create
-        NETLIFY_AUTH_TOKEN = credentials['netlify-token']
+        NETLIFY_AUTH_TOKEN = credentials('netlify-token')
     }
 
     stages {
