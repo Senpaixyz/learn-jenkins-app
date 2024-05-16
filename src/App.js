@@ -12,10 +12,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Jenkins on Udemy (Edited)
+          Replace Hyperlink Test
         </a>
       </header>
       <p>
+
         Application version: 1
       </p>
     </div>
