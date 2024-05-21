@@ -1,4 +1,6 @@
 pipeline {
+    // create a copy of original pipeline then add  scheduler execution like 
+    // once per day etc... 
     agent any
 
     stages {
