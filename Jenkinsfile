@@ -157,7 +157,7 @@ pipeline {
             }
 
             environment {
-                CI_ENVIRONMENT_URL = 'YOUR NETLIFY URL'
+                CI_ENVIRONMENT_URL = 'https://magical-begonia-ae91d0.netlify.app'
             }
 
             steps {
